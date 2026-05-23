@@ -17,12 +17,12 @@ kotlin {
             isStatic = true
         }
     }
-    
+
     androidLibrary {
        namespace = "com.mocloud.app.shared"
        compileSdk = libs.versions.android.compileSdk.get().toInt()
        minSdk = libs.versions.android.minSdk.get().toInt()
-    
+
        compilerOptions {
            jvmTarget = JvmTarget.JVM_11
        }
@@ -33,11 +33,8 @@ kotlin {
            isIncludeAndroidResources = true
        }
     }
-    
+
     sourceSets {
-        androidMain.dependencies {
-            implementation(libs.compose.uiToolingPreview)
-        }
         commonMain.dependencies {
             implementation(libs.compose.runtime)
             implementation(libs.compose.foundation)
@@ -47,7 +44,27 @@ kotlin {
             implementation(libs.compose.uiToolingPreview)
             implementation(libs.androidx.lifecycle.viewmodelCompose)
             implementation(libs.androidx.lifecycle.runtimeCompose)
+
+            implementation(libs.supabase.auth)
+            implementation(libs.supabase.postgrest)
+            implementation(libs.ktor.client.core)
+
+            implementation(libs.voyager.navigator)
+            implementation(libs.voyager.screenmodel)
+            implementation(libs.voyager.transitions)
+
+            implementation(libs.kotlinx.coroutines.core)
         }
+
+        androidMain.dependencies {
+            implementation(libs.compose.uiToolingPreview)
+            implementation(libs.ktor.client.okhttp)
+        }
+
+        iosMain.dependencies {
+            implementation(libs.ktor.client.darwin)
+        }
+
         commonTest.dependencies {
             implementation(libs.kotlin.test)
         }
