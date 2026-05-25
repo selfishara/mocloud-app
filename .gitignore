@@ -26,3 +26,5 @@ backend/**/__pycache__/
 *.pyo
 .venv/
 venv/
+
+.env

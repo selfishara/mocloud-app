@@ -1,0 +1,140 @@
+{
+  "app": {
+    "name": "MoCloud",
+    "version": "0.1.0",
+    "description": "Mobile AI Agent Platform — run AI agents from your phone",
+    "environment": "development",
+    "website": "",
+    "support_email": ""
+  },
+
+  "models": {
+    "explorer": "claude-haiku-4-5-20251001",
+    "builder": "claude-sonnet-4-6",
+    "pro": "claude-sonnet-4-6",
+    "pro_premium_sessions": "claude-opus-4-7",
+    "summarization": "claude-haiku-4-5-20251001"
+  },
+
+  "tiers": {
+    "explorer": {
+      "label": "Explorer",
+      "price_monthly_usd": 0,
+      "price_annual_usd": 0,
+      "daily_messages": 20,
+      "daily_executions": 5,
+      "max_concurrent_sessions": 1,
+      "session_history_days": 7,
+      "artifact_storage_gb": 0,
+      "byok": false,
+      "scheduling": false,
+      "opus_access": false
+    },
+    "builder": {
+      "label": "Builder",
+      "price_monthly_usd": 9.99,
+      "price_annual_usd": 79.99,
+      "daily_messages": 500,
+      "daily_executions": 100,
+      "max_concurrent_sessions": 5,
+      "session_history_days": 90,
+      "artifact_storage_gb": 1,
+      "byok": true,
+      "scheduling": false,
+      "opus_access": false
+    },
+    "pro": {
+      "label": "Pro",
+      "price_monthly_usd": 24.99,
+      "price_annual_usd": 199.99,
+      "daily_messages": 2000,
+      "daily_executions": 500,
+      "max_concurrent_sessions": -1,
+      "session_history_days": -1,
+      "artifact_storage_gb": 10,
+      "byok": true,
+      "scheduling": true,
+      "opus_access": true
+    }
+  },
+
+  "sandbox": {
+    "provider": "e2b",
+    "timeout_seconds": 30,
+    "memory_mb": 256,
+    "network_enabled": false,
+    "max_output_bytes": 51200,
+    "allowed_languages": ["python", "bash", "javascript", "typescript"]
+  },
+
+  "context": {
+    "max_messages_full_history": 15,
+    "prompt_cache_enabled": true,
+    "summarize_after_turns": 20,
+    "max_context_tokens": 180000
+  },
+
+  "websocket": {
+    "reconnect_max_attempts": 10,
+    "reconnect_base_delay_ms": 1000,
+    "reconnect_max_delay_ms": 30000,
+    "heartbeat_interval_ms": 30000,
+    "event_types": [
+      "token",
+      "tool_start",
+      "tool_output",
+      "tool_end",
+      "session_end",
+      "error",
+      "usage"
+    ]
+  },
+
+  "tools": {
+    "registered": [
+      "run_python",
+      "read_file",
+      "write_file",
+      "list_directory"
+    ],
+    "pro_only": [
+      "search_web",
+      "query_database"
+    ]
+  },
+
+  "error_codes": [
+    "TOOL_TIMEOUT",
+    "RATE_LIMITED",
+    "CONTEXT_TOO_LARGE",
+    "SANDBOX_UNAVAILABLE",
+    "AUTH_EXPIRED",
+    "QUOTA_EXCEEDED",
+    "INVALID_TOOL_CALL",
+    "BYOK_KEY_INVALID"
+  ],
+
+  "brand": {
+    "colors": {
+      "background": "#0F0F12",
+      "primary": "#6366F1",
+      "accent": "#A78BFA",
+      "text": "#F8F8FF",
+      "cyan": "#06B6D4",
+      "emerald": "#10B981",
+      "amber": "#F59E0B",
+      "surface": "#1A1A2E"
+    },
+    "font_ui": "Inter",
+    "font_code": "JetBrains Mono",
+    "theme": "dark"
+  },
+
+  "infographics": {
+    "subjects": ["architecture", "agent-flow", "monetization", "wat-framework", "market"],
+    "model": "nano-banana-2",
+    "resolution": "4K",
+    "output_dir": ".tmp/infographics",
+    "approved_dir": "brand_assets/infographics"
+  }
+}

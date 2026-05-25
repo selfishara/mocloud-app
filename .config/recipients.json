@@ -1,0 +1,62 @@
+{
+  "team": [
+    {
+      "name": "Sara",
+      "role": "founder",
+      "email": "saramb10.smb@gmail.com",
+      "receives": ["all"]
+    }
+  ],
+
+  "alerts": {
+    "spend": {
+      "recipients": ["founder"],
+      "thresholds": {
+        "daily_usd": 5.00,
+        "monthly_usd": 50.00
+      },
+      "channels": ["email"]
+    },
+    "errors": {
+      "recipients": ["founder"],
+      "events": [
+        "SANDBOX_UNAVAILABLE",
+        "AUTH_BREACH_ATTEMPT",
+        "API_OUTAGE",
+        "RATE_LIMIT_EXCEEDED_GLOBALLY"
+      ],
+      "channels": ["email"]
+    },
+    "growth": {
+      "recipients": ["founder"],
+      "events": [
+        "first_paying_user",
+        "mrr_milestone_100",
+        "mrr_milestone_500",
+        "mrr_milestone_1000"
+      ],
+      "channels": ["email"]
+    }
+  },
+
+  "webhooks": {
+    "error_webhook_url": "",
+    "spend_webhook_url": "",
+    "growth_webhook_url": ""
+  },
+
+  "reports": {
+    "weekly_summary": {
+      "recipients": ["founder"],
+      "day": "monday",
+      "time_utc": "08:00",
+      "includes": [
+        "new_signups",
+        "active_sessions",
+        "api_spend_usd",
+        "new_paying_users",
+        "mrr"
+      ]
+    }
+  }
+}
