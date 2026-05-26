@@ -9,7 +9,6 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.tooling.preview.Preview
 import com.mocloud.app.auth.initSupabase
 import com.mocloud.app.auth.supabase
-import io.github.jan.supabase.auth.handleDeeplinks
 
 class MainActivity : ComponentActivity() {
 
@@ -21,7 +20,7 @@ class MainActivity : ComponentActivity() {
             url = BuildConfig.SUPABASE_URL,
             anonKey = BuildConfig.SUPABASE_ANON_KEY,
         )
-
+   // supabase.handleDeeplinks(intent)
         setContent {
             App()
         }
@@ -29,7 +28,7 @@ class MainActivity : ComponentActivity() {
 
     override fun onNewIntent(intent: Intent) {
         super.onNewIntent(intent)
-        supabase.handleDeeplinks(intent)
+      //  supabase.handleDeeplinks(intent)
     }
 }
 

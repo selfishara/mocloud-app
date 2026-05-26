@@ -13,7 +13,10 @@ fun initSupabase(url: String, anonKey: String) {
         supabaseUrl = url,
         supabaseKey = anonKey,
     ) {
-        install(Auth)
+        install(Auth) {
+            scheme = "mocloud"
+            host = "auth"
+        }
         install(Postgrest)
     }
 }
