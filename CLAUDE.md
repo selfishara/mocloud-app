@@ -1,3 +1,17 @@
+# MoCloud — Project Context
+
+MoCloud is a **mobile-first AI Agent Control Center** built with Kotlin Multiplatform (Android + iOS). It is an orchestration and monitoring layer — the app controls agents, it does not run them. Actual AI workloads execute on external runtimes (servers, Docker, cloud, local machines).
+
+**v1 scope:** Auth (Google + Apple via Supabase), agent connection, task launch and monitoring, chat interface, log viewer.
+
+**Intentionally out of scope for v1:** local LLM execution, mobile containerization, on-device CI/CD, browser automation, IDE replacement.
+
+**Stack:** Compose Multiplatform, Voyager, Supabase (auth + postgrest), Ktor, FastAPI backend.
+
+When suggesting new features, keep them within v1 scope unless the user explicitly asks to plan for future versions. Never propose solutions that require heavy on-device computation, background agent execution, or mobile containerization — those are future-version concerns.
+
+---
+
 # Agent Instructions
 
 You're working inside the **WAT framework** (Workflows, Agents, Tools). This architecture separates concerns so that probabilistic AI handles reasoning while deterministic code handles execution. That separation is what makes this system reliable.

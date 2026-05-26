@@ -14,6 +14,7 @@ kotlin {
 dependencies {
     implementation(projects.shared)
 
+    implementation(libs.supabase.auth)
     implementation(libs.androidx.activity.compose)
 
     implementation(libs.compose.uiToolingPreview)
